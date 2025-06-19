@@ -1,106 +1,26 @@
-/* Paleta de colores:
-   - Rojo: #DC3545 (para detalles y resaltados)
-   - Blanco: #FFFFFF (fondo, texto principal en elementos oscuros)
-   - Negro: #212529 (texto principal, fondo oscuro)
-   - Tonos de azul: #007bff (azul primario), #0056b3 (azul oscuro para hover)
-*/
+/* Importa la fuente Inter de Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin: 0;
-    padding: 0;
-    /* --- PROPIEDADES DE FONDO CON Fotoempresa.png --- */
-    background-image: url('Fotoempresa.png.jpg'); /* Usa tu imagen de fondo */
+    font-family: 'Inter', sans-serif; /* Usa Inter como fuente principal */
+    /* Propiedades de fondo con Fotoempresa.jpg */
+    background-image: url('Fotoempresa.jpg'); /* Asegúrate de que esta imagen esté en la misma carpeta */
     background-size: cover; /* Cubre todo el fondo */
     background-position: center center; /* Centra la imagen */
     background-repeat: no-repeat; /* Evita que la imagen se repita */
     background-attachment: fixed; /* Mantiene la imagen fija al hacer scroll */
-    /* --- FIN DE LAS PROPIEDADES DE FONDO --- */
-    background-color: #f8f9fa; /* Color de respaldo si la imagen no carga */
-    color: #212529; /* Negro para el texto principal */
-    line-height: 1.6;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; /* Asegura que el footer se quede abajo */
 }
 
-header {
-    background-color: #212529; /* Negro para el encabezado */
-    color: #FFFFFF; /* Texto blanco */
-    padding: 2rem 0;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-header h1 {
-    margin: 0;
-    font-size: 2.8rem;
-    color: #007bff; /* Tono azul para el título principal */
-}
-
-header p {
-    font-size: 1.2rem;
-    margin-top: 10px;
-}
-
-main {
-    flex-grow: 1; /* Permite que el main ocupe el espacio restante */
-    padding: 20px;
-    max-width: 960px; /* Ancho máximo para el contenido */
-    margin: 30px auto;
-}
-
+/* Estilo para las secciones de contenido, dando un fondo semi-transparente */
 .content-section {
     background-color: rgba(255, 255, 255, 0.9); /* Fondo blanco con 90% de opacidad para ver el fondo */
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 30px;
-    margin-bottom: 30px; /* Espacio entre secciones */
 }
 
-.content-section h2 {
-    color: #DC3545; /* Rojo para los títulos de sección */
-    font-size: 2.2rem;
-    border-bottom: 3px solid #007bff; /* Subrayado azul para los títulos */
-    padding-bottom: 10px;
-    margin-bottom: 20px;
-}
-
-.content-section p {
-    font-size: 1.1rem;
-    margin-bottom: 15px;
-}
-
+/* Estilos de transición y efecto hover para los botones de WhatsApp */
 .whatsapp-btn {
-    display: inline-block;
-    background-color: #007bff; /* Azul primario para el botón */
-    color: white;
-    padding: 15px 30px;
-    border: none;
-    border-radius: 5px;
-    font-size: 1.2rem;
-    cursor: pointer;
-    text-decoration: none;
     transition: background-color 0.3s ease, transform 0.2s ease;
-    margin-top: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
 }
 
 .whatsapp-btn:hover {
-    background-color: #0056b3; /* Azul más oscuro al pasar el mouse */
-    transform: translateY(-2px); /* Pequeño efecto de elevación */
-}
-
-footer {
-    text-align: center;
-    padding: 1.5rem 0;
-    background-color: #212529; /* Negro para el footer */
-    color: #FFFFFF; /* Texto blanco */
-    margin-top: auto; /* Empuja el footer hacia abajo */
-    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
-}
-
-footer p {
-    margin: 0;
-    font-size: 0.9rem;
+    transform: translateY(-2px); /* Pequeño efecto de elevación al pasar el mouse */
 }

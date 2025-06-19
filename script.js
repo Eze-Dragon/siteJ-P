@@ -1,20 +1,36 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log('¡Hola desde JavaScript! La página se ha cargado completamente.');
 
-    const whatsappButton = document.getElementById('whatsappButton');
+    // Obtener referencias a los dos botones de WhatsApp
+    const whatsappButton1 = document.getElementById('whatsappButton1');
+    const whatsappButton2 = document.getElementById('whatsappButton2');
 
-    if (whatsappButton) {
-        whatsappButton.addEventListener('click', () => {
-            // Número de WhatsApp al que quieres redirigir
-            // Formato para Argentina: 549 seguido del código de área sin 0 y el número sin 15.
-            const phoneNumber = '5493764699977'; // Este es el número 3764-699977 con prefijo 549 para WhatsApp
-            const message = 'Hola, estoy visitando su página web y me gustaría obtener más información sobre sus servicios informáticos.';
+    // Mensaje predefinido para WhatsApp
+    const message = 'Hola, estoy visitando su página web y me gustaría obtener más información sobre sus servicios informáticos.';
 
-            const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    // Función para abrir WhatsApp con el número proporcionado
+    const openWhatsApp = (phoneNumber) => {
+        const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+        window.open(whatsappLink, '_blank');
+    };
 
-            window.open(whatsappLink, '_blank');
+    // Configurar el primer botón
+    if (whatsappButton1) {
+        whatsappButton1.addEventListener('click', () => {
+            // Número para el primer contacto: 3758-419583 con prefijo 549 para WhatsApp
+            openWhatsApp('5493758419583');
         });
     } else {
-        console.error('El botón con el ID "whatsappButton" no fue encontrado.');
+        console.error('El botón con el ID "whatsappButton1" no fue encontrado.');
+    }
+
+    // Configurar el segundo botón
+    if (whatsappButton2) {
+        whatsappButton2.addEventListener('click', () => {
+            // Número para el segundo contacto: 3764-699977 con prefijo 549 para WhatsApp
+            openWhatsApp('5493764699977');
+        });
+    } else {
+        console.error('El botón con el ID "whatsappButton2" no fue encontrado.');
     }
 });

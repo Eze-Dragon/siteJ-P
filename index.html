@@ -4,36 +4,57 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>J&P: Servicios Informáticos</title>
-    <link rel="stylesheet" href="style.css">
+    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!-- Carga de Tailwind CSS para un diseño moderno y responsivo -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Enlace a tu archivo de estilos personalizado -->
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <header>
-        <h1>J&P: Servicios Informáticos</h1>
-        <p>Tu aliado en tecnología y soporte técnico.</p>
+<body class="flex flex-col min-h-screen text-gray-800 bg-gray-100">
+    <header class="bg-gray-900 text-white py-8 text-center shadow-lg">
+        <h1 class="text-5xl font-bold text-blue-500 mb-2">J&P: Servicios Informáticos</h1>
+        <p class="text-lg">Tu aliado en tecnología y soporte técnico.</p>
     </header>
 
-    <main>
-        <section id="quienes-somos" class="content-section">
-            <h2>Quiénes Somos</h2>
-            <p>Somos una empresa dedicada a ofrecer servicios informáticos para particulares y empresas. Con un conocimiento sólido, nuestro objetivo es brindar un <strong>soporte técnico confiable, rápido y eficiente</strong> para que la tecnología sea una herramienta, no un problema.</p>
-            <p>Nos especializamos en reparación de PCs y notebooks, eliminación de virus, configuración de redes, recuperación de datos y asesoramiento personalizado. ¡Estamos aquí para ayudarte a optimizar tu entorno digital!</p>
+    <main class="flex-grow p-5 max-w-4xl mx-auto my-8 w-full">
+        <section id="quienes-somos" class="content-section rounded-xl shadow-xl p-8 mb-8">
+            <h2 class="text-4xl font-semibold text-red-600 border-b-4 border-blue-500 pb-4 mb-6">Quiénes Somos</h2>
+            <p class="text-lg leading-relaxed mb-4">Somos una empresa dedicada a ofrecer servicios informáticos para particulares y empresas. Con un conocimiento sólido, nuestro objetivo es brindar un <strong class="text-blue-600">soporte técnico confiable, rápido y eficiente</strong> para que la tecnología sea una herramienta, no un problema.</p>
+            <p class="text-lg leading-relaxed">Nos especializamos en reparación de PCs y notebooks, eliminación de virus, configuración de redes, recuperación de datos y asesoramiento personalizado. ¡Estamos aquí para ayudarte a optimizar tu entorno digital!</p>
         </section>
 
-        <section id="contacto" class="content-section">
-            <h2>Contáctanos</h2>
-            <p>Si necesitas asistencia técnica o deseas consultarnos sobre nuestros servicios, no dudes en contactarnos:</p>
-            <p><strong>Teléfonos:</strong> 3758-419583 | 3764-699977</p>
-            <p>Haz clic en el botón para chatear directamente con nosotros por WhatsApp:</p>
-            <button id="whatsappButton" class="whatsapp-btn">Chatear por WhatsApp</button>
+        <section id="contacto" class="content-section rounded-xl shadow-xl p-8">
+            <h2 class="text-4xl font-semibold text-red-600 border-b-4 border-blue-500 pb-4 mb-6">Contáctanos</h2>
+            <p class="text-lg leading-relaxed mb-6">Si necesitas asistencia técnica o deseas consultarnos sobre nuestros servicios, no dudes en contactarnos. Selecciona el número con el que deseas chatear por WhatsApp:</p>
+
+            <div class="flex flex-col sm:flex-row justify-center gap-6">
+                <!-- Botón para el primer número de WhatsApp -->
+                <button id="whatsappButton1" class="whatsapp-btn bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg shadow-lg text-xl flex items-center justify-center space-x-3 w-full sm:w-auto">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.165 2.97A9.878 9.878 0 0010 0C4.477 0 0 4.477 0 10c0 1.776.47 3.447 1.3 4.887L.085 19.915a.5.5 0 00.612.612L5.113 18.7c1.44.83 3.111 1.3 4.887 1.3 5.523 0 10-4.477 10-10 0-2.65-.96-5.112-2.585-6.97zM10 18c-1.66 0-3.23-.48-4.57-1.31L4 17.65l.76-2.82c-.83-1.34-1.31-2.91-1.31-4.57 0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8zm3.92-5.46a.7.7 0 01-.19.49c-.19.18-.46.3-.77.38a1.27 1.27 0 01-.54.1c-.27 0-.54-.04-.8-.13-.39-.13-.77-.32-1.12-.55-.66-.46-1.25-1.07-1.7-1.74-.45-.69-.73-1.46-.86-2.28-.09-.27-.05-.55.07-.81.1-.2.27-.37.47-.48.2-.12.43-.16.66-.1.2.06.38.16.5.31.13.16.19.34.2.53.02-.2-.04.4-.17.6-.09.12-.2.24-.3.35-.12.1-.22.21-.3.32-.15.15-.22.33-.22.52 0 .22.1.42.27.57.17.16.38.25.62.25.17 0 .33-.04.49-.12.16-.08.3-.18.43-.3.12-.13.22-.27.3-.43.1-.19.23-.32.4-.38.17-.06.34-.07.51-.03.2.04.38.12.5.25.13.13.23.28.3.47.07.19.09.4.05.61-.04.2-.13.38-.26.54z"/>
+                    </svg>
+                    <span>3758-419583</span>
+                </button>
+
+                <!-- Botón para el segundo número de WhatsApp -->
+                <button id="whatsappButton2" class="whatsapp-btn bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-lg shadow-lg text-xl flex items-center justify-center space-x-3 w-full sm:w-auto">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17.165 2.97A9.878 9.878 0 0010 0C4.477 0 0 4.477 0 10c0 1.776.47 3.447 1.3 4.887L.085 19.915a.5.5 0 00.612.612L5.113 18.7c1.44.83 3.111 1.3 4.887 1.3 5.523 0 10-4.477 10-10 0-2.65-.96-5.112-2.585-6.97zM10 18c-1.66 0-3.23-.48-4.57-1.31L4 17.65l.76-2.82c-.83-1.34-1.31-2.91-1.31-4.57 0-4.418 3.582-8 8-8s8 3.582 8 8-3.582 8-8 8zm3.92-5.46a.7.7 0 01-.19.49c-.19.18-.46.3-.77.38a1.27 1.27 0 01-.54.1c-.27 0-.54-.04-.8-.13-.39-.13-.77-.32-1.12-.55-.66-.46-1.25-1.07-1.7-1.74-.45-.69-.73-1.46-.86-2.28-.09-.27-.05-.55.07-.81.1-.2.27-.37.47-.48.2-.12.43-.16.66-.1.2.06.38.16.5.31.13.16.19.34.2.53.02.2-.04.4-.17.6-.09.12-.2.24-.3.35-.12.1-.22.21-.3.32-.15.15-.22.33-.22.52 0 .22.1.42.27.57.17.16.38.25.62.25.17 0 .33-.04.49-.12.16-.08.3-.18.43-.3.12-.13.22-.27.3-.43.1-.19.23-.32.4-.38.17-.06.34-.07.51-.03.2.04.38.12.5.25.13.13.23.28.3.47.07.19.09.4.05.61-.04.2-.13.38-.26.54z"/>
+                    </svg>
+                    <span>3764-699977</span>
+                </button>
+            </div>
+            <p class="text-sm text-gray-600 mt-4 text-center">Teléfonos: 3758-419583 | 3764-699977</p>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2025 J&P. Todos los derechos reservados.</p>
-        <p>Servicios informáticos en Apóstoles, Misiones.</p>
+    <footer class="bg-gray-900 text-white py-6 text-center shadow-lg mt-auto">
+        <p class="text-sm">&copy; 2025 J&P. Todos los derechos reservados.</p>
+        <p class="text-sm">Servicios informáticos en Apóstoles, Misiones.</p>
     </footer>
 
+    <!-- Enlace a tu archivo de script personalizado -->
     <script src="script.js"></script>
 </body>
 </html>
