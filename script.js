@@ -4,13 +4,20 @@ document.addEventListener('DOMContentLoaded', () => {
     // Obtener referencias a los dos botones de WhatsApp
     const whatsappButton1 = document.getElementById('whatsappButton1');
     const whatsappButton2 = document.getElementById('whatsappButton2');
+    // Obtener referencia al menú desplegable de servicios
+    const serviceSelect = document.getElementById('serviceSelect');
 
     // Mensaje predefinido para WhatsApp
-    const message = 'Hola, estoy visitando su página web y me gustaría obtener más información sobre sus servicios informáticos.';
+    let baseMessage = 'Hola, estoy visitando su página web y me gustaría obtener más información sobre sus servicios informáticos.';
+    let currentService = ''; // Variable para almacenar el servicio seleccionado
 
-    // Función para abrir WhatsApp con el número proporcionado
+    // Función para abrir WhatsApp con el número proporcionado y el mensaje actualizado
     const openWhatsApp = (phoneNumber) => {
-        const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+        let fullMessage = baseMessage;
+        if (currentService) {
+            fullMessage += ` Estoy interesado en el servicio de ${currentService}.`;
+        }
+        const whatsappLink = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(fullMessage)}`;
         window.open(whatsappLink, '_blank');
     };
 
@@ -32,5 +39,20 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     } else {
         console.error('El botón con el ID "whatsappButton2" no fue encontrado.');
+    }
+
+    // Lógica para el menú desplegable de servicios
+    if (serviceSelect) {
+        serviceSelect.addEventListener('change', (event) => {
+            currentService = event.target.options[event.target.selectedIndex].text; // Obtiene el texto de la opción seleccionada
+            if (event.target.value) { // Verifica que no sea la opción por defecto
+                console.log(`Servicio seleccionado: ${currentService}`);
+            } else {
+                console.log('Ningún servicio seleccionado.');
+                currentService = ''; // Resetea el servicio si se selecciona la opción por defecto
+            }
+        });
+    } else {
+        console.error('El menú desplegable con el ID "serviceSelect" no fue encontrado.');
     }
 });
